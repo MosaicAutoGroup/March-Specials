@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./vars.css">
+  <!-- Removed: <link rel="stylesheet" href="./style.css"> -->
+
+  <style>
+    /* Existing inline styles */
+    a,
+    button,
+    input,
+    select,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: none;
+      text-decoration: none;
+      background: none;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+    menu,
+    ol,
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Styles from style.css */
+    .group-1,
+    .group-1 * {
+      box-sizing: border-box;
+    }
+
+    .group-1 {
+      max-width: 800px; /* Reduced from 1000px to 800px */
+      width: 100%; /* Scales down to fit smaller screens */
+      height: 1600px; /* Reduced from 2000px (proportional scaling: 3150 * 800/1575 ≈ 1600) */
+      position: relative;
+      margin: 0 auto; /* Centers horizontally */
+    }
+
+    .background-image-1 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      aspect-ratio: 1575/3150;
+    }
+
+    .background-image-12 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      right: 0%;
+      left: 0%;
+      bottom: 0%;
+      top: 0%;
+      object-fit: cover;
+    }
+
+    .address-b-1 {
+      width: 70.86%; /* 1116px / 1575px */
+      max-width: 568px; /* Scaled down: 1116 * 800/1575 ≈ 568 */
+      height: 46px; /* Scaled down: 90 * 800/1575 ≈ 46 */
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 82.6%; /* 2602px / 3150px */
+      aspect-ratio: 1116/90;
+    }
+
+    .address-b-12 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      right: 0%;
+      left: 0%;
+      bottom: 0%;
+      top: 0%;
+      object-fit: cover;
+    }
+
+    .phone-number-b-1 {
+      width: 32.25%; /* 508px / 1575px */
+      max-width: 258px; /* Scaled down: 508 * 800/1575 ≈ 258 */
+      height: 59px; /* Scaled down: 117 * 800/1575 ≈ 59 */
+      position: absolute;
+      left: 70%;
+      transform: translateX(-50%);
+      top: 78.89%; /* 2485px / 3150px */
+      aspect-ratio: 508/117;
+    }
+
+    .phone-number-b-12 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      right: 0%;
+      left: 0%;
+      bottom: 0%;
+      top: 0%;
+      object-fit: cover;
+    }
+
+    .website-b-1 {
+      width: 32.25%; /* 508px / 1575px */
+      max-width: 258px; /* Scaled down: 508 * 800/1575 ≈ 258 */
+      height: 59px; /* Scaled down: 117 * 800/1575 ≈ 59 */
+      position: absolute;
+      left: 30%;
+      transform: translateX(-50%);
+      top: 78.89%; /* 2485px / 3150px */
+      aspect-ratio: 508/117;
+    }
+
+    .website-b-12 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      right: 0%;
+      left: 0%;
+      bottom: 0%;
+      top: 0%;
+      object-fit: cover;
+    }
+
+    .escape-offer-1 {
+      width: 100%;
+      height: 245px; /* Scaled down: 482 * 800/1575 ≈ 245 */
+      position: absolute;
+      left: 0;
+      top: 63.59%; /* 2003px / 3150px */
+      aspect-ratio: 1575/482;
+    }
+
+    .escape-offer-12 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      right: 0%;
+      left: 0%;
+      bottom: 0%;
+      top: 0%;
+      object-fit: cover;
+    }
+
+    .bronco-offer-1 {
+      width: 100%;
+      height: 245px; /* Scaled down: 482 * 800/1575 ≈ 245 */
+      position: absolute;
+      left: 0;
+      top: 50.89%; /* 1603px / 3150px */
+      aspect-ratio: 1575/482;
+    }
+
+    .bronco-offer-12 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      right: 0%;
+      left: 0%;
+      bottom: 0%;
+      top: 0%;
+      object-fit: cover;
+    }
+
+    .bronco-sport-offer-1 {
+      width: 100%;
+      height: 245px; /* Scaled down: 482 * 800/1575 ≈ 245 */
+      position: absolute;
+      left: 0;
+      top: 37.46%; /* 1180px / 3150px */
+      aspect-ratio: 1575/482;
+    }
+
+    .bronco-sport-offer-12 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      right: 0%;
+      left: 0%;
+      bottom: 0%;
+      top: 0%;
+      object-fit: cover;
+    }
+
+    .f-150-offer-1 {
+      width: 100%;
+      height: 244px; /* Scaled down: 480 * 800/1575 ≈ 244 */
+      position: absolute;
+      left: 0;
+      top: 22.22%; /* 700px / 3150px */
+      aspect-ratio: 1575/480;
+    }
+
+    .f-150-offer-12 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      right: 0%;
+      left: 0%;
+      bottom: 0%;
+      top: 0%;
+      object-fit: cover;
+    }
+
+    .view-specials-b-1 {
+      width: 26.67%; /* 420px / 1575px */
+      max-width: 214px; /* Scaled down: 420 * 800/1575 ≈ 214 */
+      height: 129px; /* Scaled down: 254 * 800/1575 ≈ 129 */
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 15.62%; /* 492px / 3150px */
+      aspect-ratio: 420/254;
+    }
+
+    .view-specials-b-12 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      right: 0%;
+      left: 0%;
+      bottom: 0%;
+      top: 0%;
+      object-fit: cover;
+    }
+
+    .view-inventory-b-1 {
+      width: 26.67%; /* 420px / 1575px */
+      max-width: 214px; /* Scaled down: 420 * 800/1575 ≈ 214 */
+      height: 129px; /* Scaled down: 254 * 800/1575 ≈ 129 */
+      position: absolute;
+      left: 20%;
+      transform: translateX(-50%);
+      top: 15.62%; /* 492px / 3150px */
+      aspect-ratio: 420/254;
+    }
+
+    .view-inventory-b-12 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      right: 0%;
+      left: 0%;
+      bottom: 0%;
+      top: 0%;
+      object-fit: cover;
+    }
+
+    .logo-header-1 {
+      width: 100%;
+      height: 249px; /* Scaled down: 490 * 800/1575 ≈ 249 */
+      position: absolute;
+      left: 0;
+      top: 0.06%; /* 2px / 3150px */
+      aspect-ratio: 1575/490;
+    }
+
+    .logo-header-12 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      right: 0%;
+      left: 0%;
+      bottom: 0%;
+      top: 0%;
+      object-fit: cover;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 1200px) { /* Laptops */
+      .group-1 {
+        max-width: 640px; /* Further scale down */
+        height: 1280px; /* Proportional: 1600 * 640/800 */
+      }
+      .address-b-1 {
+        width: 60%;
+        max-width: 454px; /* 568 * 640/800 */
+        height: 37px; /* 46 * 640/800 */
+        top: 83%;
+      }
+      .phone-number-b-1 {
+        width: 25%;
+        max-width: 206px; /* 258 * 640/800 */
+        height: 47px; /* 59 * 640/800 */
+        left: 75%;
+        top: 80%;
+      }
+      .website-b-1 {
+        width: 25%;
+        max-width: 206px; /* 258 * 640/800 */
+        height: 47px; /* 59 * 640/800 */
+        left: 25%;
+        top: 80%;
+      }
+      .escape-offer-1,
+      .bronco-offer-1,
+      .bronco-sport-offer-1 {
+        height: 196px; /* 245 * 640/800 */
+      }
+      .f-150-offer-1 {
+        height: 195px; /* 244 * 640/800 */
+      }
+      .view-specials-b-1 {
+        width: 20%;
+        max-width: 171px; /* 214 * 640/800 */
+        height: 103px; /* 129 * 640/800 */
+        top: 16%;
+      }
+      .view-inventory-b-1 {
+        width: 20%;
+        max-width: 171px; /* 214 * 640/800 */
+        height: 103px; /* 129 * 640/800 */
+        left: 25%;
+        top: 16%;
+      }
+      .logo-header-1 {
+        height: 199px; /* 249 * 640/800 */
+      }
+    }
+
+    @media (max-width: 768px) { /* Tablets */
+      .group-1 {
+        max-width: 480px;
+        height: 960px; /* Proportional: 1600 * 480/800 */
+      }
+      .address-b-1 {
+        width: 80%;
+        max-width: 340px; /* 568 * 480/800 */
+        height: 28px; /* 46 * 480/800 */
+        top: 85%;
+      }
+      .phone-number-b-1 {
+        width: 40%;
+        max-width: 154px; /* 258 * 480/800 */
+        height: 35px; /* 59 * 480/800 */
+        left: 50%;
+        top: 82%;
+      }
+      .website-b-1 {
+        width: 40%;
+        max-width: 154px; /* 258 * 480/800 */
+        height: 35px; /* 59 * 480/800 */
+        left: 50%;
+        top: 78%;
+      }
+      .escape-offer-1,
+      .bronco-offer-1,
+      .bronco-sport-offer-1 {
+        height: 147px; /* 245 * 480/800 */
+      }
+      .f-150-offer-1 {
+        height: 146px; /* 244 * 480/800 */
+      }
+      .view-specials-b-1 {
+        width: 30%;
+        max-width: 128px; /* 214 * 480/800 */
+        height: 77px; /* 129 * 480/800 */
+        top: 18%;
+      }
+      .view-inventory-b-1 {
+        width: 30%;
+        max-width: 128px; /* 214 * 480/800 */
+        height: 77px; /* 129 * 480/800 */
+        left: 50%;
+        top: 14%;
+      }
+      .logo-header-1 {
+        height: 149px; /* 249 * 480/800 */
+      }
+    }
+
+    @media (max-width: 480px) { /* Mobile */
+      .group-1 {
+        max-width: 320px;
+        height: 640px; /* Proportional: 1600 * 320/800 */
+      }
+      .address-b-1 {
+        width: 90%;
+        max-width: 227px; /* 568 * 320/800 */
+        height: 18px; /* 46 * 320/800 */
+        top: 88%;
+      }
+      .phone-number-b-1 {
+        width: 50%;
+        max-width: 103px; /* 258 * 320/800 */
+        height: 24px; /* 59 * 320/800 */
+        left: 50%;
+        top: 84%;
+      }
+      .website-b-1 {
+        width: 50%;
+        max-width: 103px; /* 258 * 320/800 */
+        height: 24px; /* 59 * 320/800 */
+        left: 50%;
+        top: 80%;
+      }
+      .escape-offer-1,
+      .bronco-offer-1,
+      .bronco-sport-offer-1 {
+        height: 98px; /* 245 * 320/800 */
+      }
+      .f-150-offer-1 {
+        height: 98px; /* 244 * 320/800 */
+      }
+      .view-specials-b-1 {
+        width: 40%;
+        max-width: 86px; /* 214 * 320/800 */
+        height: 52px; /* 129 * 320/800 */
+        top: 15%;
+      }
+      .view-inventory-b-1 {
+        width: 40%;
+        max-width: 86px; /* 214 * 320/800 */
+        height: 52px; /* 129 * 320/800 */
+        top: 10%;
+      }
+      .logo-header-1 {
+        height: 99px; /* 249 * 320/800 */
+      }
+    }
+  </style>
+
+  <title>Document</title>
+</head>
+<body>
+  <div class="group-1">
+    <div class="background-image-1">
+      <img class="background-image-12" src="background-image-11.png" />
+    </div>
+    <div class="address-b-1">
+      <a href="https://www.mosaicautos.com/contact">
+        <img class="address-b-12" src="address-b-11.png" />
+      </a>
+    </div>
+    <div class="phone-number-b-1">
+      <a href="tel:+16513455313">
+        <img class="phone-number-b-12" src="phone-number-b-11.png" />
+      </a>
+    </div>
+    <div class="website-b-1">
+      <a href="https://www.mosaicautos.com/">
+        <img class="website-b-12" src="website-b-11.png" />
+      </a>
+    </div>
+    <div class="escape-offer-1">
+      <a href="https://www.mosaicautos.com/new-vehicles-for-sale?lot=Mosaic%20Ford&page=1&model=Escape">
+        <img class="escape-offer-12" src="escape-offer-11.png" />
+      </a>
+    </div>
+    <div class="bronco-offer-1">
+      <a href="https://www.mosaicautos.com/new-vehicles-for-sale?lot=Mosaic%20Ford&page=1&model=Bronco">
+        <img class="bronco-offer-12" src="bronco-offer-11.png" />
+      </a>
+    </div>
+    <div class="bronco-sport-offer-1">
+      <a href="https://www.mosaicautos.com/new-vehicles-for-sale?lot=Mosaic%20Ford&page=1&model=Bronco%20Sport">
+        <img class="bronco-sport-offer-12" src="bronco-sport-offer-11.png" />
+      </a>
+    </div>
+    <div class="f-150-offer-1">
+      <a href="https://www.mosaicautos.com/new-vehicles-for-sale?lot=Mosaic%20Ford&page=1&model=F-150">
+        <img class="f-150-offer-12" src="f-150-offer-11.png" />
+      </a>
+    </div>
+    <div class="view-specials-b-1">
+      <a href="https://www.mosaicautos.com/specials">
+        <img class="view-specials-b-12" src="view-specials-b-11.png" />
+      </a>
+    </div>
+    <div class="view-inventory-b-1">
+      <a href="https://www.mosaicautos.com/new-vehicles-for-sale?lot=Mosaic%20Ford&page=1">
+        <img class="view-inventory-b-12" src="view-inventory-b-11.png" />
+      </a>
+    </div>
+    <div class="logo-header-1">
+      <a href="https://www.mosaicautos.com/">
+        <img class="logo-header-12" src="logo-header-11.png" />
+      </a>
+    </div>
+  </div>
+</body>
+</html>
